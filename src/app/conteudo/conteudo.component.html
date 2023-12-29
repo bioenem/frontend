@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecologia</title>
+    <link rel="stylesheet" href="./conteudo.component.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section id="intro">
+        <div class="intro">
+            <div class="text">
+                <div class="up">
+                    <h1>{{ topico }}</h1>
+                </div>
+
+                <div class="down">
+                  <div class="card" *ngFor="let imagem of imagens; let i = index">
+                    <div class="card_body">
+                      <button><a [href]="links[i].url" target="_blank">{{ links[i].descricao }}</a></button>
+                    </div>
+                    <div class="card_img">
+                      <img *ngIf="imagem" [src]="'/assets/' + imagem" alt="">
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="practice">
+        <h1>VAMOS PRATICAR?</h1>
+        <p>Chegou a hora de você testar suas habilidades neste assunto e descobrir no que está bom(oa) ou no que pode melhorar. Simbora?</p>
+    </section>
+
+    <div>
+      <app-quiz></app-quiz>
+    </div>
+
+</body>
+</html>
